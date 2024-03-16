@@ -1,0 +1,97 @@
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    background-image: url('background_image.jpg'); 
+    background-size: cover; /* 確保圖片覆蓋整個背景 */
+    background-position: center; /* 背景圖片居中顯示 */
+}
+
+h1 {
+    width: 75%;
+    margin: 0 auto; /* 讓標題在頁面中居中 */
+    text-align: center;
+    font-weight: bold;
+    background-color: #00896b;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    background-color: #00896b;
+    color: #fff;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    margin: 10px 0;
+    font-size: 18px; 
+}
+
+.section {
+    margin-bottom: 20px;
+    width: 75%;
+    margin: 0 auto; /* 讓框在頁面中居中 */
+    padding: 10px;
+    background-color: #fff; /* 設置背景顏色 */
+    overflow: hidden; /* 添加此屬性以防止內容溢出 */
+}
+
+.right-aligned-image {
+    float: right;
+    max-width: 25%; /* 確保圖片寬度不超過容器寬度 */
+    height: auto; /* 高度自動調整以保持比例 */
+    border-radius: 50%;
+    border: 5px solid #00896b; /* 圖片的邊框，可自定義顏色和寬度 */
+}
+
+.content-container {
+    display: flex; /* 使用flexbox來排列圖片和文字 */
+    align-items: flex-start; /* 對齊至頂部 */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+.image-container {
+    flex: 0 0 150px; /* 圖片框固定為150px寬，不伸縮 */
+    height: 150px; /* 高度也設為150px */
+    margin-right: 20px; /* 與文字框之間的間隙 */
+    border-radius: 50%; /* 圖片圓形 */
+    overflow: hidden; /* 超出圓形部分隱藏 */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* 裁剪圖片以覆蓋整個區域 */
+    border-radius: 50%; /* 繼續使圖片保持圓形 */
+}
+
+.text-container {
+    flex: 1; /* 文字框佔據剩餘空間 */
+}
+
+.blue-text {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  .large-text {
+    font-size: 20px; 
+}
+
