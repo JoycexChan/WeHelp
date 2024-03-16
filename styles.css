@@ -7,6 +7,7 @@ body {
     background-image: url('background_image.jpg'); 
     background-size: cover; /* 確保圖片覆蓋整個背景 */
     background-position: center; /* 背景圖片居中顯示 */
+    background-attachment: fixed;
 }
 
 /* 針對手機和平板設備的螢幕 */
