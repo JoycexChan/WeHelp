@@ -9,6 +9,13 @@ body {
     background-position: center; /* 背景圖片居中顯示 */
 }
 
+/* 針對手機和平板設備的螢幕 */
+@media only screen and (max-width: 767px) {
+    body {
+        background-attachment: scroll; /* 在小屏幕設備上取消固定背景 */
+    }
+}
+
 h1 {
     width: 75%;
     margin: 0 auto; /* 讓標題在頁面中居中 */
