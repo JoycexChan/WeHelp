@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #daffdf;
     background-image: url('background_image.jpg'); 
     background-size: cover; /* 確保圖片覆蓋整個背景 */
     background-position: center; /* 背景圖片居中顯示 */
