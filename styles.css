@@ -97,6 +97,6 @@ p {
 }
 
 .content {
-    display: none;
+    display: block;
     /* 其他已有樣式 */
 }
