@@ -78,18 +78,18 @@
     </div>
 
     <script>
-        function toggleContent(element) {
-           // 找到 h2 標題下的 profile-container 元素
-          var profileContainer = element.nextElementSibling;
-    
-          // 檢查 profile-container 元素當前的顯示狀態並切換它
-           if (profileContainer.style.display === "none" || profileContainer.style.display === '') {
-               profileContainer.style.display = "block";
-          } else {
-               profileContainer.style.display = "none";
-            }
+    function toggleContent(element) {
+        var contentContainer = element.parentNode.querySelector(".content");
+        var style = window.getComputedStyle(contentContainer);
+
+        if (style.display === "none" || style.display === '') {
+            contentContainer.style.display = "block";
+        } else {
+            contentContainer.style.display = "none";
         }
-    </script>    
+    }
+    </script>
+
   
 </body>
 </html>
