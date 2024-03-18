@@ -1,3 +1,4 @@
+
 body {
     font-family: "Arial", sans-serif;
     line-height: 1.6;
@@ -7,14 +8,6 @@ body {
     background-image: url('background_image.jpg'); 
     background-size: cover; /* 確保圖片覆蓋整個背景 */
     background-position: center; /* 背景圖片居中顯示 */
-    background-attachment: fixed;
-}
-
-/* 針對手機和平板設備的螢幕 */
-@media only screen and (max-width: 767px) {
-    body {
-        background-attachment: scroll; /* 在小屏幕設備上取消固定背景 */
-    }
 }
 
 h1 {
@@ -103,3 +96,7 @@ p {
     font-size: 20px; 
 }
 
+.content {
+    display: none;
+    /* 其他已有樣式 */
+}
