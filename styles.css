@@ -144,8 +144,10 @@
         .main-content {
             width: 90%; /* 宽度为屏幕宽度的90% */
         }
+        .welcome-text {
+            font-size: 30px;
+        }
     }
-
 
 
 
