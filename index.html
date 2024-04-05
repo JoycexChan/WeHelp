@@ -1,0 +1,148 @@
+<!DOCTYPE html> <!-- 定義文檔類型和HTML版本 -->
+<html lang="en"> <!-- 開始HTML文檔，設定語言為英文 -->
+<head> <!-- 開始文檔頭部區域 -->
+    <title>Week 1 Homework</title> <!-- 定義網頁標題 -->
+    <meta charset="UTF-8"> <!-- 設定網頁字符集編碼為UTF-8 -->
+    <link rel="stylesheet" href="styles.css"> <!-- 連結外部CSS檔案，用於樣式設定 -->
+</head> <!-- 結束文檔頭部區域 -->
+
+<body> <!-- 開始文檔主體部分 -->
+
+        <!-- 導航欄開始 -->
+        <div class="navbar">
+            <a href="#home" class="logo">My Website</a>
+            <img src="BurgerMenu.png" alt="Menu" class="burger-menu-icon" onclick="toggleMenu()">
+            <div class="navbar-menu" id="navbarMenu">
+                <a href="#Item1">Item 1</a>
+                <a href="#Item2">Item 2</a>
+                <a href="#Item3">Item 3</a>
+                <a href="#Item4">Item 4</a>
+            </div>
+        </div>
+
+        <!-- 彈出菜單 -->
+        <div class="popup-menu" id="popupMenu">
+            <div class="close-icon" onclick="closeMenu()">&#10006;</div>
+            <a href="#Item1">Item 1</a>
+            <a href="#Item2">Item 2</a>
+            <a href="#Item3">Item 3</a>
+            <a href="#Item4">Item 4</a>
+        </div>
+        <!-- 導航欄結束 -->
+
+
+
+    <!-- 歡迎文本開始 -->
+    <div class="welcome-text">
+        Welcome to MyHome <!-- 歡迎文字顯示區域 -->
+    </div>
+    <!-- 歡迎文本結束 -->
+
+    <!-- 主內容區開始 -->
+    <div class="main-content">
+        <!-- A 盒子開始 -->
+        <div class="A-box-container">
+
+            <div class="A-box">
+                <div class="A1-img-box">
+                    <img src="image.jpg" alt="Image 1"> <!-- A盒子中的圖像1 -->
+                </div>
+                <div class="A1-text-box">Promotion 1</div> <!-- A盒子中的文本1 -->
+            </div>
+            <div class="A-box">
+                <div class="A1-img-box">
+                    <img src="image.jpg" alt="Image 2"> <!-- A盒子中的圖像2 -->
+                </div>
+                <div class="A1-text-box">Promotion 2</div> <!-- A盒子中的文本2 -->
+            </div>
+            <div class="A-box">
+                <div class="A1-img-box">
+                    <img src="image.jpg" alt="Image 3"> <!-- A盒子中的圖像3 -->
+                </div>
+                <div class="A1-text-box">Promotion 3</div> <!-- A盒子中的文本3 -->
+            </div>
+
+        </div>
+        <!-- A 盒子結束 -->
+
+        <!-- B 盒子開始 -->
+        <div class="B-box-container">
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 1</div> <!-- B盒子中的文本1 -->
+                <div class="star-icon" onclick="toggleStar(this)"></div> <!-- B盒子中的星形圖標，可互動 -->
+            </div>
+    
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 2</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 3</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+
+                </div>
+                <div class="B1-text-box">Title 4</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 5</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 6</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 7</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 8</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 9</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        
+            <div class="B-box">
+                <div class="B1-img-box">
+                </div>
+                <div class="B1-text-box">Title 10</div>
+                <div class="star-icon" onclick="toggleStar(this)"></div>
+            </div>
+        </div>
+        <!-- B 盒子結束 -->
+        
+    </div>
+    <!-- 主內容區結束 -->
+
+<script src="script.js"></script> <!-- 引入外部JavaScript文件 -->
+</body> <!-- 文檔主體結束 -->
+</html> <!-- HTML文檔結束 -->
