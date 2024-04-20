@@ -4,7 +4,6 @@ function toggleMenu() {
     popup.classList.toggle('show-menu'); // 切換 .show-menu 類來控制菜單的顯示和隱藏
 }
 
-// 這個函數可能之前缺失了
 function closeMenu() {
     let popup = document.getElementById("popupMenu");
     popup.classList.remove('show-menu'); // 移除 .show-menu 類來隱藏菜單
