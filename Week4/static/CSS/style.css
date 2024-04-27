@@ -109,3 +109,10 @@ button {
     font-size: 14px;              /* 設定按鈕內文字大小為 16 像素 */
     text-transform: uppercase;    /* 將按鈕內的文字轉換為大寫 */
 }
+
+
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #ccc; /* 設定為灰色 */
+}
