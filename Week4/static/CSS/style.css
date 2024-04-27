@@ -106,6 +106,6 @@ button {
     border: 1px solid black;      /* 設定按鈕邊框為 1 像素、實線、黑色 */
     border-radius: 4px;           /* 按鈕邊角圓滑化，半徑為 4 像素 */
     cursor: pointer;              /* 鼠標懸停時顯示為指針形狀 */
-    font-size: 16px;              /* 設定按鈕內文字大小為 16 像素 */
+    font-size: 14px;              /* 設定按鈕內文字大小為 16 像素 */
     text-transform: uppercase;    /* 將按鈕內的文字轉換為大寫 */
 }
