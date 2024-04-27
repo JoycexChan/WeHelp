@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登入表單</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- 歡迎文本開始 -->
+    <div class="welcome-text text-30px">
+        歡迎光臨，請輸入帳號密碼 <!-- 歡迎文字顯示區域 -->
+    </div>
+
+    <div class="main-content text-25px">
+        <div class="container">
+            <div class="text-bold">登入系統</div>
+            <form id="loginForm" action="/signin" method="post">
+                <div class="form-group">
+                    <label for="username">帳號</label>
+                    <input type="text" placeholder="輸入帳號" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密碼</label>
+                    <input type="password" placeholder="輸入密碼" name="password" required>
+                </div>
+                <div class="checkbox">
+                    <label for="agree">同意條款</label>
+                    <input type="checkbox" id="agree" name="remember">
+                </div>
+                <div class="buttonbox">
+                    <button type="submit">登入</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr class="separator">
+    <div class="main-content text-25px">
+        <div class="container">
+            <div class="text-bold">計算正整數的平方</div>
+            <form id="squareForm">
+                <div class="form-group">
+                    <label for="numberInput">正整數</label>
+                    <input type="text" id="numberInput" placeholder="輸入一個正整數">
+                </div>
+                <div class="buttonbox">
+                    <button type="button" onclick="checkAndRedirect()">計算</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
