@@ -11,7 +11,7 @@ SELECT * FROM member;
 - Task 2
 [1] Create a new database named website.
 [2] Create a new table named member, in the website database
-![2-1](image/2-1.png)
+![image](image/2-1.png)
   - Subtask 2
 
 
