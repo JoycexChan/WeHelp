@@ -123,6 +123,12 @@ CREATE TABLE message (
 
 ![image](image/5-1.png)
 
+
+
+## 導入數據
+
+![image](image/5.png)
+
 ## [2] SELECT all messages, including sender names. We have to JOIN the member table to get that.
 
 SELECT m.name, msg.content
