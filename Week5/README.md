@@ -1,11 +1,13 @@
 # Task 2
 
 [1] Create a new database named website.
+
 CREATE DATABASE website;
 
 ![image](image/2-1.png)
 
 [2] Create a new table named member, in the website database
+
 CREATE TABLE member (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
