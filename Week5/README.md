@@ -21,8 +21,11 @@ CREATE TABLE member (
 
 ![image](image/2-2.png)
 
-# Task3
 
+
+
+
+# Task3
 
 ## [1] INSERT a new row to the member table where name, username and password must be set to test. INSERT additional 4 rows with arbitrary data.
 
@@ -80,6 +83,10 @@ UPDATE member SET name = 'test2' WHERE username = 'test';
 
 ![image](image/3-8.png)
 
+
+
+
+
 # Task4
 
 ## [1] SELECT how many rows from the member table.
@@ -106,6 +113,10 @@ SELECT AVG(follower_count) AS average_top2_followers FROM ( SELECT follower_coun
 
 ![image](image/4-4.png)
 
+
+
+
+
 # Task5
 
 ## [1] Create a new table named message, in the website database.
@@ -125,7 +136,7 @@ CREATE TABLE message (
 
 
 
-## 導入數據
+## [*] 導入數據
 
 ![image](image/5.png)
 
