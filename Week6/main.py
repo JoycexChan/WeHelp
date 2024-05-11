@@ -104,7 +104,7 @@ async def member(request: Request):
     else:
         return RedirectResponse(url="/", status_code=status.HTTP_303_SEE_OTHER)
 
-@app.post("/submitmessage")
+@app.post("/createMessage")
 async def submit_message(request: Request, message: str = Form(...)):
     user_id = request.session.get('member_id')  # 假設會話中存有 member_id
     if not user_id:
