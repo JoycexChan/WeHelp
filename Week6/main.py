@@ -43,11 +43,6 @@ async def signup(request: Request, name: str = Form(...), username: str = Form(.
     conn.close()
     return RedirectResponse(url="/?message=註冊成功", status_code=status.HTTP_303_SEE_OTHER)
 
-
-@app.get("/signin")
-async def show_signin(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
 @app.post("/signin")
 async def signin(request: Request, username: str = Form(...), password: str = Form(...)):
     # 建立資料庫連接
