@@ -1,5 +1,5 @@
 
-document.getElementById('indexForm').onsubmit = function(e) {
+document.getElementById('inputForm').onsubmit = function(e) {
     var checkbox = document.querySelector('input[name="remember"]');
     if (!checkbox.checked) {
         alert('Please check the checkbox first');
