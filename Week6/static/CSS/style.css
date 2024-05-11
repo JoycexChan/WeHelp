@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif; /* 字體家族設為 Arial，備選為無襯線字體 */
+    background-color: #ffffff; /* 背景顏色設為白色 */
+    margin: 0; /* 外邊距設為 0 */
+    padding: 0; /* 內邊距設為 0 */
+    box-sizing: border-box; /* 盒模型的計算方式包括邊框和內邊距 */
+}
+
+/* 文本樣式 */
+    /* 共通的文本樣式 */
+    .text-bold {
+        font-weight: bold; /* 文字加粗 */
+        text-align: center; /* 文字水平置中 */
+        margin-bottom: 10px; /* 底部外邊距設為 10px */
+    }
+    
+    .text-25px {
+        font-size: 25px; /* 文字大小設為 25px */
+    }
+    
+    .text-30px {
+        font-size: 30px; /* 文字大小設為 30px */
+    }
+
+/* 歡迎文本樣式 */
+.welcome-text {
+    display: flex; /* 使用彈性盒子模型顯示 */
+    align-items: center; /* 項目垂直居中對齊 */
+    justify-content: center; /* 項目水平居中對齊 */
+    width: 100%; /* 寬度設為佔據整個容器 */
+    height: 90px; /* 高度設為 90px */
+    background-color: #223343; /* 背景色設為深藍色 */
+    color: rgb(255, 255, 255); /* 文字顏色設為白色 */
+}
+
+.main-content {
+    margin: 0 auto; /* 上下邊距為 0，左右自動（水平居中） */
+    background-color: #ffffff; /* 背景顏色設為白色 */
+    box-sizing: border-box; /* 盒模型的計算方式包括邊框和內邊距 */
+}
+
+.container {
+    margin: 0 auto; /* 上下邊距為 0，左右自動（水平居中） */
+    background-color: #ffffff; /* 背景顏色設為白色 */
+    padding: 20px; /* 內邊距設為 20px */
+    width: 300px; /* 寬度設為 300px */
+    border: 1px solid #ffffff; /* 邊框設為 1px 實線，顏色為白色 */
+    border-radius: 0; /* 邊框圓角設為 0 */
+}
+
+.message-container {
+    display: flex;            /* 啟用 flexbox */
+    flex-direction: column;   /* 元素縱向排列 */
+    align-items: center;      /* 水平置中 */
+    text-align: center;       /* 文字對齊居中 */
+}
+
+.form-group {
+    display: flex; /* 使用彈性盒子模型顯示 */
+    justify-content: space-between; /* 項目之間的間隔平均分布 */
+    margin-bottom: 10px; /* 底部外邊距設為 10px */
+}
+
+.form-group label {
+    margin: 0; /* 外邊距設為 0 */
+    line-height: 30px; /* 行高設為 30px */
+}
+
+input[type="text"],
+input[type="password"] {
+    flex: 1;                      /* 讓輸入框彈性佔滿父元素的剩餘空間 */
+    padding: 5px;                 /* 在輸入框內部增加 5 像素的內邊距 */
+    margin-left: 10px;            /* 在標籤和輸入框之間增加 10 像素的左邊距 */
+    border: 1px solid #dbdbdb;    /* 設定輸入框邊框為 1 像素、實線、灰色 */
+    border-radius: 4px;           /* 輸入框邊角圓滑化，半徑為 4 像素 */
+    font-size: 15px;              /* 設定字體大小為 15 像素 */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;           /* 複選框右邊增加 10 像素的外邊距 */
+}
+
+/* 移動複選框到文本的右側 */
+.checkbox {
+    display: flex;                /* 使用 Flexbox 來排列複選框和標籤 */
+    align-items: center;          /* 垂直方向上中對齊內容 */
+    margin-bottom: 10px;          /* 在元素下方增加 10 像素的外邊距 */
+    justify-content: center;      /* 水平方向上居中對齊內容 */
+}
+
+.checkbox input[type="checkbox"] {
+    padding: 10px;                /* 複選框內部增加 10 像素的內邊距 */
+    margin-left: 10px;            /* 複選框左邊增加 10 像素的外邊距 */
+}
+
+.buttonbox {
+    text-align: center;           /* 將按鈕內的文字水平居中 */
+}
+
+button {
+    width: 65px;                  /* 設定按鈕寬度為 65 像素 */
+    padding: 7px;                 /* 按鈕內部增加 7 像素的內邊距 */
+    background-color: #e0e0e0;    /* 按鈕背景顏色為灰色 */
+    color: black;                 /* 按鈕文字顏色為黑色 */
+    border: 1px solid black;      /* 設定按鈕邊框為 1 像素、實線、黑色 */
+    border-radius: 4px;           /* 按鈕邊角圓滑化，半徑為 4 像素 */
+    cursor: pointer;              /* 鼠標懸停時顯示為指針形狀 */
+    font-size: 14px;              /* 設定按鈕內文字大小為 16 像素 */
+    text-transform: uppercase;    /* 將按鈕內的文字轉換為大寫 */
+}
+
+
+.separator {
+    border: none;
+    height: 1px;
+    background-color: #ccc; /* 設定為灰色 */
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 10px;*/
+    /*border-bottom: 1px solid #ccc; 灰線*/
+}
+
+.mbox {
+    display: flex;
+    justify-content: space-between; /* 保證子元素一個置左，一個置右 */
+    align-items: center;            /* 確保子元素在垂直方向上居中對齊 */
+    width: 100%;                    /* 可以調整或根據需要設置寬度 */
+}
+
+.delete-button {
+    width: 20px;                  /* 設定按鈕寬度為 65 像素 */
+    height: 20px;                  /* 設定按鈕寬度為 65 像素 */
+    padding: 0;                    /* 移除內邊距 */
+    margin-right: 10px;            /* 右邊距設為 10 像素 */
+    background-color: #e0e0e0;    /* 按鈕背景顏色為灰色 */
+    color: black;                 /* 按鈕文字顏色為黑色 */
+    border: 1px solid black;      /* 設定按鈕邊框為 1 像素、實線、黑色 */
+    border-radius: 4px;           /* 按鈕邊角圓滑化，半徑為 4 像素 */
+    cursor: pointer;              /* 鼠標懸停時顯示為指針形狀 */
+    font-size: 14px;              /* 設定按鈕內文字大小為 16 像素 */
+    text-transform: uppercase;    /* 將按鈕內的文字轉換為大寫 */
+}
