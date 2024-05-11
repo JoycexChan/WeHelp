@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>member</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 歡迎文本開始 -->
+    <div class="welcome-text text-30px">
+        歡迎光臨，這是會員頁 <!-- 歡迎文字顯示區域 -->
+    </div>
+
+    <div class="message-container text-25px">
+             <p>{{ member_name }}，歡迎登入系統</p>
+            <a href="/signout">登出系統</a>
+    </div>
+
+    <hr class="separator">
+
+    <div class="main-content text-25px">
+        <div class="container">
+            <div class="text-bold">快來留言吧</div>
+            <form id="inputForm" action="/submitmessage" method="post">
+                <div class="form-group">
+                    <label for="message">內容</label>
+                    <input type="text" placeholder="輸入留言" name="message" required>
+                </div>
+                <div class="buttonbox">
+                    <button type="submit">送出</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <hr class="separator">
+
+    <div class="container">
+        {% for msg in messages %}
+            <div class="message">
+                <div class="mbox">
+                    <p><strong> {{ msg[1] }}:</strong> {{ msg[0] }}</p>
+                    {% if user_id == msg[4] %}
+                    <form action="/deletemessage/{{ msg[5] }}" method="post" onsubmit="return confirmDelete();">
+                        <button type="submit" class="delete-button">X</button>
+                    </form>
+                {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
+
