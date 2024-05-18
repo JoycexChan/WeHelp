@@ -1,11 +1,10 @@
-from fastapi import FastAPI, Form, Request, Depends, HTTPException, status
-from fastapi.responses import RedirectResponse, HTMLResponse
+from fastapi import FastAPI, Request, Depends, HTTPException, status, Form, Query
+from fastapi.responses import RedirectResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
-import mysql.connector
-from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+import mysql.connector
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="some-random-string")
@@ -190,8 +189,11 @@ async def delete_message(request: Request, message_id: int):
     
     return RedirectResponse(url="/member", status_code=303)
 
-@app.get("/api/member/{username}")
-async def get_member(username: str):
+@app.get("/api/member")
+async def get_member(username: str = Query(default=None, description="The username to query for.")):
+    if username is None:
+        return {"data": None}  # 可以選擇返回適當的錯誤消息或代碼
+
     conn = mysql.connector.connect(
         host="localhost",
         user="websiteuser",
@@ -203,7 +205,7 @@ async def get_member(username: str):
         cursor.execute("SELECT id, name, username FROM member WHERE username = %s", (username,))
         member = cursor.fetchone()
         if member:
-            return {"id": member[0], "name": member[1], "username": member[2]}
+            return {"data": {"id": member[0], "name": member[1], "username": member[2]}}
         else:
             return {"data": None}
     finally:
