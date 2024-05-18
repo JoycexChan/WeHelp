@@ -14,9 +14,15 @@ function confirmDelete() {
 
 async function fetchMemberData() {
     const username = document.getElementById('usernameInput').value;
-    const response = await fetch(`http://localhost:8000/api/member/${username}`);
+    if (!username.trim()) {
+        document.getElementById('memberInfo').textContent = '請輸入用戶名。';
+        return;
+    }
+
+    const response = await fetch(`http://localhost:8000/api/member?username=${encodeURIComponent(username)}`);
     const result = await response.json();
     const memberInfo = document.getElementById('memberInfo');
+
     if (result.data) {
         // 確認 data 不是 null 並且有有效內容
         memberInfo.textContent = `${result.data.name} (${result.data.username})`;
