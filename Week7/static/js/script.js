@@ -11,23 +11,36 @@ function confirmDelete() {
     return confirm('您確定要刪除這條留言嗎？');
 }
 
-
 async function fetchMemberData() {
     const username = document.getElementById('usernameInput').value;
     if (!username.trim()) {
-        document.getElementById('memberInfo').textContent = '請輸入用戶名。';
+        document.getElementById('memberInfo').textContent = '请输入用户名。';
         return;
     }
 
-    const response = await fetch(`http://localhost:8000/api/member?username=${encodeURIComponent(username)}`);
-    const result = await response.json();
-    const memberInfo = document.getElementById('memberInfo');
+    try {
+        const response = await fetch(`http://127.0.0.1:8000/api/member?username=${encodeURIComponent(username)}`, {
+            method: 'GET',
+            credentials: 'include' // 確保攜帶 cookies，支持跨域請求
+        });
 
-    if (result.data) {
-        // 確認 data 不是 null 並且有有效內容
-        memberInfo.textContent = `${result.data.name} (${result.data.username})`;
-    } else {
-        memberInfo.textContent = 'No Data';
+        if (!response.ok) {
+            throw new Error('Failed to fetch data: ' + response.statusText);
+        }
+
+        const result = await response.json();
+
+        const memberInfo = document.getElementById('memberInfo');
+        if (result.data && result.data.name) {
+            // 確認 data 不是 null 並寫包含用戶信息
+            memberInfo.textContent = `${result.data.name} (${result.data.username})`;
+        } else if (result.data === null) {
+            // 處理沒有找到數據或者未登錄的狀況
+            memberInfo.textContent = 'No Data or not logged in';
+        }
+    } catch (error) {
+        console.error('Fetch error:', error);
+        document.getElementById('memberInfo').textContent = '加載數據失敗。';
     }
 }
 
@@ -61,3 +74,4 @@ async function updateMemberName() {
         document.getElementById('updateStatus').textContent = '更新失敗：網絡或服務器錯誤';
     }
 }
+
