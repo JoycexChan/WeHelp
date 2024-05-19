@@ -189,9 +189,6 @@ async def delete_message(request: Request, message_id: int):
     
     return RedirectResponse(url="/member", status_code=303)
 
-@app.get("/api/member")
-
-
 
 @app.get("/api/member")
 async def get_member(request: Request, username: str = Query(default=None, description="The username to query for.")):
