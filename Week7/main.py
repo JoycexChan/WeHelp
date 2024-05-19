@@ -195,13 +195,13 @@ async def delete_message(request: Request, message_id: int):
 
 @app.get("/api/member")
 async def get_member(request: Request, username: str = Query(default=None, description="The username to query for.")):
-    print("会话数据：", request.session)  # 打印会话数据以便调试
+    print("會話數據：", request.session)  # 打印會話
     if 'member_id' not in request.session:
-        print("未登录")
-        return {"data": None}  # 用户未登录
+        print("未登入")
+        return {"data": None}  # 用戶未登入
     
     if username is None:
-        return {"data": None}  # 可以選擇返回適當的錯誤消息或代碼
+        return {"data": None}  
 
     conn = mysql.connector.connect(
         host="localhost",
