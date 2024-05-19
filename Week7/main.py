@@ -14,10 +14,10 @@ templates = Jinja2Templates(directory="templates")
 # 添加 CORS 中間件，允許所有來源
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 允許所有來源
+    allow_origins=["http://127.0.0.1:8000"],  # 只允许来自同一源的请求
     allow_credentials=True,
-    allow_methods=["*"],  # 允許所有方法
-    allow_headers=["*"],  # 允許所有頭部信息
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -190,7 +190,16 @@ async def delete_message(request: Request, message_id: int):
     return RedirectResponse(url="/member", status_code=303)
 
 @app.get("/api/member")
-async def get_member(username: str = Query(default=None, description="The username to query for.")):
+
+
+
+@app.get("/api/member")
+async def get_member(request: Request, username: str = Query(default=None, description="The username to query for.")):
+    print("会话数据：", request.session)  # 打印会话数据以便调试
+    if 'member_id' not in request.session:
+        print("未登录")
+        return {"data": None}  # 用户未登录
+    
     if username is None:
         return {"data": None}  # 可以選擇返回適當的錯誤消息或代碼
 
@@ -211,6 +220,7 @@ async def get_member(username: str = Query(default=None, description="The userna
     finally:
         cursor.close()
         conn.close()
+
 
 @app.patch("/api/member")
 async def update_member_name(request: Request):
@@ -240,5 +250,4 @@ async def update_member_name(request: Request):
     finally:
         cursor.close()
         conn.close()
-
 
